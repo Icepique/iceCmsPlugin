@@ -1,0 +1,26 @@
+iceModelCmsPage:
+  homepage:
+    tree_left:    1
+    tree_right:   2
+    tree_scope:   1
+    is_published: true
+
+iceModelCmsPageI18n:
+  1:
+    id: homepage
+    name:         Хоумпейдж
+    slug:         /
+    contents:     n/a
+    culture:      bg
+  2:
+    id: homepage
+    name:         Homepage
+    slug:         /
+    contents:     n/a
+    culture:      en
+  3:
+    id: homepage
+    name:         Хоумпейдж
+    slug:         /
+    contents:     n/a
+    culture:      ru

@@ -1,0 +1,50 @@
+connection: propel
+noXsd: false
+defaultIdMethod: native
+package: plugins.iceCmsPlugin.lib.model
+encoding: utf8
+
+classes:
+  CmsPage:
+    phpName: iceModelCmsPage
+    treeMode: NestedSet
+    isI18n:  true
+    i18nTable:  cms_page_i18n
+    columns:
+      id:  ~
+      tree_left:    { type: integer, required: true, default: 0, nestedSetLeftKey: true }
+      tree_right:   { type: integer, required: true, default: 0, nestedSetRightKey: true }
+      tree_scope:   { type: integer, required: true, default: 0, treeScopeKey: true }
+      is_published: { type: boolean, sqlType: "BOOL", default: false }
+      updated_at:  ~
+      created_at:  ~
+
+  CmsPageI18n:
+    phpName: iceModelCmsPageI18n
+    columns:
+      id:  ~
+      name:              { type: varchar(128), required: true, primaryString: true }
+      slug:              { type: varchar(255), required: true }
+      contents:          { type: longvarchar, required: true }
+      meta_description:  { type: varchar(255), required: false }
+      meta_keywords:     { type: varchar(255), required: false }
+
+    uniques:
+      cms_page_i18n_U_1:: [slug, culture]
+
+  CmsSlot:
+    phpName: iceModelCmsSlot
+    isI18n:  true
+    i18nTable:  cms_slot_i18n
+    columns:
+      id:  ~
+      type:        { type: char, sqlType: "ENUM('Text','RichText','Image')", default: RichText }
+      name:        { type: varchar(64), primaryString: true }
+      updated_at:  ~
+      created_at:  ~
+
+  CmsSlotI18n:
+    phpName: iceModelCmsSlotI18n
+    columns:
+      id:  ~
+      contents:    { type: longvarchar }

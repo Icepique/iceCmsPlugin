@@ -1,0 +1,28 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           iceModelCmsSlot
+    theme:                 bootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              iceModelCmsSlot
+    plural:                iceModelCmsSlots
+    route_prefix:          ice_cms_slot
+    with_propel_route:     1
+    actions_base_class:    IceBackendActions
+
+    config:
+      fields:  ~
+      list:
+        title:  CMS Slots
+        object_actions:
+          _edit:  ~
+      filter:
+        # display: [type]
+        class: false
+      form:
+        display: [name, bg_BG, en_US, ru_RU]
+      edit:
+        title: Edit CMS Slot
+      new:
+        title: New CMS Slot

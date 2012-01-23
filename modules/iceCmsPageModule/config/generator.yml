@@ -1,0 +1,39 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           iceModelCmsPage
+    theme:                 bootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              iceModelCmsPage
+    plural:                iceModelCmsPages
+    route_prefix:          ice_cms_page
+    with_propel_route:     1
+    actions_base_class:    IceBackendActions
+
+    config:
+      actions: ~
+      fields:
+        slug_with_level: { label: Path }
+        slug: { label: Path }
+        multimedia_count: { label: Images }
+        is_published: { label: 'Published?' }
+      list:
+        title: CMS Pages
+        display: [name, slug_with_level, multimedia_count, is_published, updated_at]
+      filter:
+        # display: [is_published]
+        class: false
+      form:
+        display: [_page, bg_BG, en_US, ru_RU, is_published]
+        actions:
+          _delete:  ~
+          _list:
+            label: Back to List
+          _save_and_add:  ~
+          _save:  ~
+      edit:
+        title: Edit CMS Page
+        display: [bg_BG, en_US, ru_RU, _form_multimedia, _form_multimedia_upload, is_published]
+      new:
+        title: New CMS Page

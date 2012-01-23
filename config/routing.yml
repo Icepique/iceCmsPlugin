@@ -1,0 +1,17 @@
+ice_cms_page:
+  class: sfPropelRouteCollection
+  options:
+    model:                iceModelCmsPage
+    module:               iceCmsPageModule
+    prefix_path:          /cms-page
+    column:               id
+    with_wildcard_routes: true
+
+ice_cms_slot:
+  class: sfPropelRouteCollection
+  options:
+    model:                iceModelCmsSlot
+    module:               iceCmsSlotModule
+    prefix_path:          /cms-slot
+    column:               id
+    with_wildcard_routes: true
